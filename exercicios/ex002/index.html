@@ -5,22 +5,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Interação JS</title>
     <style>
+        /* Comentário em CSS */
         body{
+            background-color: rgb(105, 105, 173);
             font: 12pt Arial;
         }
         button{
             font-size: 12pt; 
             padding: 30px;
         }
+        h1 {
+            color: yellow;
+        }
     </style>
 </head>
 <body>
     <h1>Interagindo com um botão</h1>
-    <button onclick="clicou()">Clica em mim!</button>
-    <script>
-        function clicou(){
-            window.alert('Você clicou no botão!')
-        }
+    <!-- Comentário em HTML -->
+    <p>Tratamento de dados</p>
+    <script>        
+          var nome = window.prompt('Qual é o seu nome?')
+        //   Comentário em JavaScript
+        window.alert(`É um prazer te conhecer, ` + nome + '!')
     </script>
 </body>
 </html>
