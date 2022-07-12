@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calcula troco</title>
+    <style>
+        body{
+            font: normal 12pt Arial;
+        }
+        input, button {
+            font: normal 12pt arial;
+            padding: 30px;
+        }
+        
+
+        
+    </style>
+</head>
+<body>
+    <h1>Calculando o Troco</h1>
+    <input type="button" value="Comprar produto" onclick="clicou()">
+    <script>
+        function clicou() {
+        let pro = window.prompt('Que produto você está compando?')
+        let preco = Number(window.prompt(`Quanto custa o ${pro} que você está comprando?`))
+        let val = Number(window.prompt(`Qual foi o valor que você deu para pagar o ${pro}?`))
+        let troco = Number(val - preco)
+        
+        window.alert(`Você comprou ${pro} que custou ${preco.toLocaleString('pt-br', {style: 'currency', currency: 'BRL'})}.\n Deu ${val.toLocaleString('pt-br', {style: 'currency', currency: 'BRL'})} em dinheiro e vai receber ${troco.toLocaleString('pt-br', {style: 'currency', currency: 'BRL'})} de troco.\n Volte sempre`)
+        }
+    </script>
+</body>
+</html>
