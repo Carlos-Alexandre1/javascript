@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fórmula de Bhaskara</title>
+    <style>
+        body{
+            font: normal 1.2em arial;
+        }
+        input{
+            font: normal 1.2em arial;
+            padding: 30px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Resolvendo Bhaskara</h1>
+    <input type="button" value="Calcular" onclick="clicou()">
+    
+    <div id="resp"><p>Considerando uma equação no formato ax² + bx + c = 0, aperte o botão acima para calcular o valor de Δ</p></div>
+    <script>
+        function clicou(){
+            var a = window.prompt('Qual é o valor de a?')
+            var b = window.prompt('Qual é o valor de b?')
+            var c = window.prompt('Qual é o valor de c?')
+            var delta = Number(b**2 -4*a*c)
+            var xum = Number((-b + Math.sqrt(delta)/2*a))
+            var xdois = Number((-b - Math.sqrt(delta)/2*a))
+            
+             
+
+            var x = document.getElementById('resp')
+            x.innerHTML = `<h1>Resolvendo Bhaskara</h1><br>
+            A equação atual é ${a}x² + ${b}x + ${c} = 0<br>
+            O cálculo será Δ = ${b}²-4.${a}.${c}<br>
+            O valor calculado foi Δ = ${delta}<br>
+            x¹ é ${xum}<br>
+            x² é ${xdois}<br>`
+        }
+    </script>
+</body>
+</html>

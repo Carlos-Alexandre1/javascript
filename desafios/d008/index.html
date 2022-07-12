@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calcular desconto</title>
+    <style>
+        body{
+            font: normal 1.2em arial;
+        }
+        input{
+            padding: 30px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Calcular Desconto</h1>
+    <input type="button" value="Desconto de 10%" onclick="clicou()">
+    <p>Clique no botão acima para iniciar</p>
+    <div id="resp"></div>
+    <script>
+        function clicou(){
+            var pro = window.prompt('Qual é o produto que você está comprando?')
+            var preco = Number(window.prompt(`Qual é o preço desse(a) ${pro}`))
+            var desc = Number(preco * 0.1)
+            var final = Number(preco-desc)
+            var x = document.getElementById('resp')
+            x.innerText = `O preço original era de ${preco.toLocaleString('pt-br', {style: 'currency', currency: 'BRL'})}\n
+            Você acaba de ganhar ${desc.toLocaleString('pt-br', {style: 'currency', currency: 'BRL'})} (-10%).\n
+            No fim, você vai pagar ${final.toLocaleString('pt-br', {style: 'currency', currency: 'BRL'})} no produto ${pro}`
+        }
+    </script>
+</body>
+</html>

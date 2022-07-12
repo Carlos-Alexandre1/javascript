@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conversor R$ -> US$</title>
+    <style>
+        body{
+            font: normal 12pt Arial;
+        }
+        input, button {
+            font: normal 12pt arial;
+            padding: 30px;
+        }        
+    </style>
+</head>
+<body>
+
+    <h1>Conversor R$  ➝ US$</h1>
+    <input type="button" value="Converter" onclick="clicou()">
+    <p>Clique no botão acima para iniciar</p>
+    <div id="res"></div>
+    <script>
+        var c = Number(window.prompt('Antes de mais nada. Quanto está a cotação do dólar agora?'))
+        function clicou(){
+            var r = Number(window.prompt('Quantos reais você tem na carteira?'))
+            var d = Number(r/c)
+                        
+            var a = document.getElementById('res')
+            a.innerHTML = `<p>Com os ${r.toLocaleString('pt-br', {style: 'currency', currency: 'BRL'})} da sua carteira você poderá comprar ${d.toLocaleString('pt-br', {style: 'currency', currency: 'USD'})}</p>`
+        }
+
+    </script>
+</body>
+</html>

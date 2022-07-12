@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reajustar salário</title>
+    <style>
+        body{
+            font: normal 1.2em arial;
+        }
+        input{
+            font: normal 1.2em arial;
+            padding: 30px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Reajuste salarial</h1>
+    <input type="button" value="Reajustar salário" onclick="clicou()">
+    <p>Clique no botão acima para iniciar</p>
+    <div id="resp"></div>
+    <script>
+        function clicou(){
+            var fun = window.prompt('Qual é o nome do funcionário?')
+            var sal = Number(window.prompt(`Qual é o salário de ${fun}`))
+            var perc = Number(window.prompt(`O salário de ${fun} vai ser reajustado em que porcentagem?`))
+            var aumento = Number((perc/100)*sal)
+            var final = Number(sal + aumento)
+
+             
+
+            var x = document.getElementById('resp')
+            x.innerHTML = `<h1>O funcionário ${fun} recebeu um aumento salarial!</h1><br>
+            O salário atual era de ${sal.toLocaleString('pt-br', {style: 'currency', currency: 'BRL'})}<br>
+            Com o aumento de ${perc} % o salário vai aumentar ${aumento.toLocaleString('pt-br', {style: 'currency', currency: 'BRL'})} no próximo mês.<br>
+            E a partir daí ${fun} vai passar a ganhar ${final.toLocaleString('pt-br', {style: 'currency', currency: 'BRL'})}`
+        }
+    </script>
+</body>
+</html>
