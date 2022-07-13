@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Situação do aluno</title>
+    <style>
+        * {
+            margin: 0%;
+            padding: 0%;
+        }
+        body {
+            font: normal 1.2em arial;
+            background-image: linear-gradient(to bottom, rgba(130, 245, 201, 0.753), rgb(0, 153, 255));
+            background-repeat: no-repeat;
+            background-size: 100%;
+            width: 100vw;
+            height: 100vh;
+        }
+
+        input {
+            padding: 30px;
+            font: normal 1.2em arial;
+        }
+    </style>
+</head>
+<body>
+    <h1>Situação do aluno</h1>
+    <input type="button" value="Entrar com as notas" onclick="clicou()">
+    <div id="msg"></div>
+    <div id="resp"><p>Clique no botão acima para informar as notas do aluno.</p></div>
+
+    <script>
+        function clicou(){
+            var nome = window.prompt('Qual o nome do aluno?')
+            var n1 = Number(window.prompt(`Qual a primeira nota de ${nome}?`))
+            var n2 = Number(window.prompt(`Qual a segunda nota de ${nome}?`)) 
+            var media = ((n1 + n2) / 2)
+
+            var x = document.getElementById('msg')
+            x.innerHTML = (`<h1>Analisando a situação de ${nome}</h1>`)
+            var y = document.getElementById('resp')
+
+            y.innerHTML = (`<p>Com as notas ${n1} e ${n2}, <strong> a média é ${media}</strong></p>`)
+
+            if(media < 3){
+                y.innerHTML += (`<p>Com a média abaixo de 3,0, o aluno está REPROVADO</p>`)
+
+            } if(media>=3 && media<=6){
+                y.innerHTML += (`<p>Com a média entre 3,0 e 6,0, o aluno está em RECUPERAÇÃO</p>`)
+
+            } if(media > 6){
+                y.innerHTML += (`<p>Com a média acima de 6,0, o aluno está em APROVADO</p>`)
+            }
+        }
+    </script>
+</body>
+</html>

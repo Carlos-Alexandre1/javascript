@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Preço mudou</title>
+    <style>
+        body{
+            font: normal 1.2em arial;
+            background-color: rgb(192, 238, 238);
+        }
+        input{
+            padding: 30px;
+            font: normal 1.2em arial;
+        }
+    </style>
+</head>
+<body>
+    <h1>Preço mudou</h1>
+    <input type="button" value="Verificar" onclick="clicou()">
+    <div id="msg"></div>
+    <div id="resp"><p>Clique no botão acima para analizar a mudança de preço.</p></div> 
+    
+<script>
+    function clicou(){
+        antigo = Number(window.prompt('Qual era o preço anterior do produto?'))
+        atual = Number(window.prompt('Qual é o preço atual do produto?'))
+        dif = Math.abs((atual - antigo))
+        perc = ((dif/antigo) * 100)
+
+        var msg = document.getElementById('resp')
+        msg.innerHTML = (`<h1>Analisando os valores informados</h1>`)
+        var resp = document.getElementById('resp')
+        resp.innerHTML = (`<p>O produto custava ${antigo.toLocaleString('pt-br', {style: 'currency', currency: 'BRL'})} e agora custa ${atual.toLocaleString('pt-br', {style: 'currency', currency: 'BRL'})}</p>`)
+        if(atual > antigo){
+            resp.innerHTML += (`<p>Hoje o produto está mais caro</p>
+            <p>O preço aumentou ${dif.toLocaleString('pt-br', {style: 'currency', currency: 'BRL'})} em relação ao anterior</p>
+            <p>Uma variação de ${perc.toFixed(2)}% para cima</p>`)
+        } else {
+            resp.innerHTML += (`<p>Hoje o produto está mais barato.</p>
+            <p>O preço caiu ${dif} em relação ao anterior.</p>
+            <p>Uma variação de ${perc.toFixed(2)}% para baixo.</p>`)
+        }
+        
+    }
+
+</script>
+</body>
+</html>
