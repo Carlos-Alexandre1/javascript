@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Número maior</title>
+</head>
+<body>
+
+    <!-- Objetivo: Ler dois números independente da ordem em que foram digitados e apresentá-los em ordem crescente com uso de if else.
+    -->
+   
+    <script>
+        // Definição de variáveis
+        var js_n1;
+        var js_n2;
+
+        //Entrada de dados
+        js_n1 = parseInt(window.prompt('Informe o valor do primeiro número: '));
+        js_n2 = parseInt(window.prompt('Informe o valor do segundo número: '));
+
+        //Escreve os dados na tela
+        document.write('Número 1 digitado = ' + js_n1);
+        document.write('<br>Número 2 digitado = ' + js_n2);
+
+        //Condição se o primeiro é maior troca os valores
+        if (js_n1 > js_n2) {
+            //Exibe os resultados
+            document.write('<br><b>Classificação em ordem crescente: ' + js_n2 + ' e ' + js_n1 +'</b>');
+        } else {
+            //Exibe os resultados
+            document.write('<br><b>Classificação em ordem crescente: ' + js_n1 + ' e ' + js_n2 +'</b>');
+        }
+
+        
+    </script>
+</body>
+</html>
