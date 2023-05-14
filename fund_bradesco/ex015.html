@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upper Case</title>
+</head>
+<body>
+    <!-- Entrada de dados via formulário -->
+    <h3>Formulário de consulta de curso: </h3>
+    <form name="formcurso" action="" method="post">
+        <label for="cursodig">Digite seu curso: </label>
+        <input type="text" name="f_cursodig" id="formcurso" size="8" maxlength="4"> (SIST)
+        <br>
+        <input type="button" name="btn_validar" value="Validar" onclick="cadcurso()">
+        <input type="reset" name="btn_cancelar" value="Cancelar" size="15" maxlength="10">
+        <br>
+        <label for="codcurso">Código do curso: </label> <input type="text" name="f_codcurso" id="codcurso" size="15" maxlength="10">
+    </form>
+
+    <!-- Estrutura JavaScript com método toUpperCase() -->
+    <script language="JavaScript">
+        /*Objetivo: capturar o nome do curso e apresentar o código correspondente
+        
+        verificar se js_cursodig for igual a SIST apresentar o código "sist001/fb"
+        caso contrário apresentar a mensagem "Curso inválido!"
+        Objetos e métodos:
+            Entrada: document.form
+            Saída: document.form(para código válido no campo de saída do formulário)
+            Saída: document.alert(para código inválido por janela de alerta)
+        Formulário: formcurso
+        Função: cadcurso
+        Evento: onlclick
+        */
+
+        //Definição das variáveis:
+        var js_cursodig;
+
+        //Função cadcurso()
+        function cadcurso() {
+            js_cursodig = document.getElementById("formcurso").value;
+            if(js_cursodig.toUpperCase() == 'SIST') {
+                document.formcurso.f_codcurso.value = "SIST001/FB";
+            } else {
+                window.alert("Curso Inválido!");
+            }
+        }
+        
+    </script>
+</body>
+</html>
